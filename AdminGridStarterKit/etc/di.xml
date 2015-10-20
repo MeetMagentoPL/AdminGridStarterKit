@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!--<preference for="Ashsmith\Blog\Api\Data\PostInterface" type="Ashsmith\Blog\Model\Post" />-->
+    <!--<virtualType name="BlogGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">-->
+        <!--<arguments>-->
+            <!--<argument name="appliers" xsi:type="array">-->
+                <!--<item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>-->
+                <!--<item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>-->
+            <!--</argument>-->
+        <!--</arguments>-->
+    <!--</virtualType>-->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="admingridstarterkit_recipe_listing_data_source" xsi:type="string">MeetMagentoPL\AdminGridStarterKit\Model\ResourceModel\Recipe\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="MeetMagentoPL\AdminGridStarterKit\Model\ResourceModel\Recipe\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">admingridstarterkit_recipe</argument>
+            <argument name="resourceModel" xsi:type="string">MeetMagentoPL\AdminGridStarterKit\Model\ResourceModel\Recipe</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="RecipeGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">MeetMagentoPL\AdminGridStarterKit\Model\ResourceModel\Recipe\Collection</argument>
+            <!--<argument name="filterPool" xsi:type="object" shared="false">BlogGirdFilterPool</argument>-->
+        </arguments>
+    </virtualType>
+</config>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MeetMagentoPL_AdminGridStarterKit::recipes" title="Recipe" module="MeetMagentoPL_AdminGridStarterKit" sortOrder="50" parent="Magento_Backend::content" resource="MeetMagentoPL_AdminGridStarterKit::recipes" />
+        <add id="MeetMagentoPL_AdminGridStarterKit::recipe" title="Recipes" module="MeetMagentoPL_AdminGridStarterKit" sortOrder="0" parent="MeetMagentoPL_AdminGridStarterKit::recipes" action="admingridstarterkit/recipe" resource="MeetMagentoPL_AdminGridStarterKit::recipe"/>
+    </menu>
+</config>
